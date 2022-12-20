@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_tasarim/gonderiKarti.dart';
+import 'package:instagram_tasarim/profilSayfasi.dart';
 
 void main() => runApp(MyApp());
 
@@ -104,7 +105,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             gecenSure: "15 dakika önce",
             aciklama: "Favelaya gittim",
             profilResimLinki:
-                "https://cdn.pixabay.com/photo/2016/11/23/00/33/man-1851469_960_720.jpg",
+                "https://instagram.fadb5-1.fna.fbcdn.net/v/t51.2885-15/280156097_145407964673069_1595558480382984499_n.webp?stp=dst-jpg_e35_s320x320&_nc_ht=instagram.fadb5-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=Oabnr5qYkVUAX8UCVeP&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDrDhIh2mgm0xGNKdyvu3o5B5q7CVWzNkoAe9PbMCVVng&oe=63A67BD4&_nc_sid=8fd12b",
             gonderiResimLinki:
                 "https://cdn.pixabay.com/photo/2018/07/20/01/42/rio-de-janeiro-3549794_1280.jpg",
           ),
@@ -144,9 +145,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
     return Material(
       child: InkWell(
         onTap: () {
-          Navigator.of(context).push(
-              CupertinoPageRoute(
-                  builder: (BuildContext context) => ProfilSayfasi()));
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (BuildContext context) => ProfilSayfasi()));
         },
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -181,7 +181,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
               ),
               SizedBox(
                 height: 6.0,
-              ), 
+              ),
               Text(
                 kullaniciAdi,
                 style: TextStyle(
@@ -193,17 +193,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ProfilSayfasi extends StatelessWidget {
-  const ProfilSayfasi({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: TextButton(onPressed: (){Navigator.pop(context);}, child: Text("Profil Sayfasi")),),
     );
   }
 }
